@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Goals, Skillset, Feedback, Staff, Managers, KRA
+from .models import Goals, Staff, Managers, KRA, TagKra, Job, Feedback_Cateog, Feedback_setting, Feedback, Skill, Tag_skill
 
 
 class ManagersSerializer(serializers.ModelSerializer):
@@ -20,10 +20,33 @@ class KRASerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TagKraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TagKra
+        fields = '__all__'
+
+
+class JobSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Job
+        fields = '__all__'
+
 class GoalsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Goals
         fields = '__all__'
+
+
+class Feedback_CateogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback_Cateog
+        fields = '__all__'
+
+class Feedback_settingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback_setting
+        fields = '__all__'
+
 
 
 class FeedbackSerializer(serializers.ModelSerializer):
@@ -32,7 +55,13 @@ class FeedbackSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class SkillsetSerializer(serializers.ModelSerializer):
+class SkillSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Skillset
+        model = Skill
+        fields = '__all__'
+
+
+class Tag_skillSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag_skill
         fields = '__all__'
