@@ -117,6 +117,7 @@ class Feedback_setting(models.Model):
 
 # Give Feedback
 class Feedback(models.Model):
+    categories = models.ForeignKey(Feedback_Cateog, on_delete=models.CASCADE, null=True)
     feedback_area = models.TextField(verbose_name='Feedback')
     staff_name = models.ForeignKey(Staff, on_delete=models.CASCADE)
 
